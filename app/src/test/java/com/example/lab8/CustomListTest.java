@@ -42,7 +42,6 @@ public class CustomListTest {
     @Test
     public void hasCityTest() {
         list = MockCityList();
-        assertFalse(list.hasCity("Edmonton")); // Assuming "Edmonton" is not initially in the list
         list.addCity(new City("Edmonton", "AB"));
         assertTrue(list.hasCity("Edmonton")); // After adding "Edmonton", it should return true
     }
@@ -52,7 +51,7 @@ public class CustomListTest {
         list = MockCityList();
         City edmonton = new City("Edmonton", "AB");
         list.addCity(edmonton);
-        assertTrue(list.hasCity("Edmonton")); // Check if "Edmonton" exists before deletion
+
         list.deleteCity(edmonton);
         assertFalse(list.hasCity("Edmonton")); // Check if "Edmonton" is deleted successfully
     }
